@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>My Django First App</title>
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    </head>
+    <body>
+		<div class="container-fluid">
+        {% for post in posts %}
+		<div class="box box-shadow">
+			<h1><a href="">{{ post.title }}</a></h1>
+			<p>{{ post.text|linebreaksbr }} <small></small></p>
+			<b>published By: {{ post.author_id }}</b><br>
+			<b>published: {{ post.published_date }}</b>
+			<hr>
+		</div>
+		{% endfor %}
+		</div>
+    </body>
+	<style>
+	h1 a {
+		color: #FCA205;
+	}
+	h1 a {
+		color: #FCA205;
+		font-family: 'Lobster';
+	}
+	.box {
+		background-color: #dfdfdf;
+		padding:10px;
+		padding-bottom:0px;
+		padding-top:0px;
+		border-radius:4px;
+	}
+	.box-shadow:after {
+		position:absolute;
+		width:100%;
+		z-index:-1;
+		transform:scale(.9);
+		box-shadow: 0px 0px 8px 2px #000000;
+	}
+	</style>
+</html>
